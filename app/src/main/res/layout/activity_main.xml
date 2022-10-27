@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="20dp"
+    android:layout_margin="20dp"
+    >
+
+    <!--EditText for adding employee name-->
+    <EditText
+        android:id="@+id/Itemname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Item Name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName" />
+
+    <!--EditText for adding employee phone-->
+    <EditText
+        android:id="@+id/Itemnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Itemname"
+        android:layout_margin="10dp"
+        android:hint="Item Number"
+        android:importantForAutofill="no"
+        android:inputType="phone" />
+
+    <!--EditText for adding employee address-->
+    <EditText
+        android:id="@+id/Itemprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Itemnum"
+        android:layout_margin="10dp"
+        android:hint="Item price"
+        android:inputType="textPostalAddress" />
+
+    <!--Button for adding data to Firebase-->
+    <Button
+        android:id="@+id/idBtnSendData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Itemprice"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Add Items"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/viewData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idBtnSendData"
+        android:text="View Items"
+        android:textAllCaps="false"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>
