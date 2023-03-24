@@ -25,12 +25,15 @@ class Get{
         return  num;
     }
 }
+
 public class MainActivity extends AppCompatActivity {
 
     // creating variables for
     // EditText and buttons.
     private EditText ItemName,ItemNum,ItemPrice;
     private Button sendDatabtn,viewButton;
+
+    private String referenceName;
 
     // creating a variable for our
     // Firebase Database.
@@ -55,25 +58,46 @@ public class MainActivity extends AppCompatActivity {
         ItemPrice = findViewById(R.id.Itemprice);
 
         viewButton=findViewById(R.id.viewData);
+
+        Intent intent = getIntent();
+        referenceName = intent.getStringExtra("reference_name");
+        Toast.makeText(MainActivity.this, "ref"+referenceName, Toast.LENGTH_SHORT).show();
+
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(MainActivity.this,CheckList.class);
+
+//                String referenceName = coursesLV2.getItemAtPosition(position).toString();
+                Intent intent = new Intent(MainActivity.this, CheckList.class);
+             //   String referenceName = intent.getStringExtra("reference_name");
+                //Toast.makeText(MainActivity.this, "ref "+referenceName, Toast.LENGTH_SHORT).show();
+                intent.putExtra("reference_name", referenceName.trim());
                 startActivity(intent);
+
             }
         });
         // below line is used to get the
         // instance of our FIrebase database.
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-        // below line is used to get reference for our database.
-        databaseReference = firebaseDatabase.getReference("AddMenu");
 
+
+        // Get the reference name from the intent extras
+
+        // below line is used to get reference for our database.
+//        databaseReference = firebaseDatabase.getReference("AddMenu");
+        if(referenceName.equals("Eta"))
+            referenceName="AddBooks";
+        if(referenceName.equals("FoodCourt"))
+            referenceName="AddMenu";
+        databaseReference = firebaseDatabase.getReference(""+referenceName);
         // initializing our object
         // class variable.
         addMenu = new AddMenu();
 
+
         sendDatabtn = findViewById(R.id.idBtnSendData);
+
 
         // adding on click listener for our button.
         sendDatabtn.setOnClickListener(new View.OnClickListener() {
