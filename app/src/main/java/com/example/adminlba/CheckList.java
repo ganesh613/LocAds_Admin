@@ -145,6 +145,8 @@ public class CheckList extends AppCompatActivity{
             referenceName="AddBooks";
         if(referenceName.equals("FoodCourt"))
             referenceName="AddMenu";
+        if(referenceName.equals("Academic Block"))
+            referenceName="ABblock";
 
         DatabaseReference ref = database.getReference(referenceName+"");
         // in below line we are calling method for add child event

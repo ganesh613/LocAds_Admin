@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
             referenceName="AddBooks";
         if(referenceName.equals("FoodCourt"))
             referenceName="AddMenu";
+        if(referenceName.equals("Academic Block"))
+            referenceName="ABblock";
         databaseReference = firebaseDatabase.getReference(""+referenceName);
         // initializing our object
         // class variable.
