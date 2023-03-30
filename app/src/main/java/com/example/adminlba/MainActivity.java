@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         referenceName = intent.getStringExtra("reference_name");
-        Toast.makeText(MainActivity.this, "ref"+referenceName, Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(MainActivity.this, "ref"+referenceName, Toast.LENGTH_SHORT).show();
 
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
